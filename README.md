@@ -157,7 +157,7 @@ CREATE TABLE upbit_orderbook (
 
 ## 결과 이미지
 
-[Grafana Dashboard 1](images/grafana_result1.png)
+[Grafana Dashboard 1](https://github.com/user-attachments/assets/699e601b-4cf2-46c6-b6bd-ef9d6d0b42bb)
 [Grafana Dashboard 2](images/grafana_result2.png)
 [Grafana Dashboard 3](images/grafana_result3.png)
 [Kafka Drop Dashboard 1](images/kafka_result1.png)
