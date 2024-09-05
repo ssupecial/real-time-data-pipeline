@@ -1,0 +1,10 @@
+.env
+broker/
+aws/
+logs/
+postgres/
+zoo/
+*.zip
+.venv/
+*.log
+*.zip
