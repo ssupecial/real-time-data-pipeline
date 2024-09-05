@@ -5,6 +5,10 @@ PostgreSQL과 S3에 데이터를 저장합니다.
 Airflow를 이용하여 배치 단위로 데이터를 분석합니다.
 Raw 데이터와 분석된 결과를 Grafana를 통해 시각화하는 시스템입니다.
 
+## 프로젝트 노션 링크
+프로젝트와 관련된 더 자세한 내용은 노션 페이지에서 확인할 수 있습니다:  
+[프로젝트 노션 링크](https://stealth-parakeet-e51.notion.site/c74c9ba7c7e145bd81a9d82c7eb2e654?pvs=4)
+
 ## 주요 기능
 1. **개발/배포 환경 구축**  
    - AWS EC2 인스턴스(t3.large)를 활용한 개발 및 배포 환경 구축.
@@ -72,6 +76,64 @@ Raw 데이터와 분석된 결과를 Grafana를 통해 시각화하는 시스템
    DB_PORT=
    ```
 
+### PostgreSQL 테이블 생성
+```
+CREATE TABLE upbit_candle (
+   id SERIAL PRIMARY KEY,
+   timestamp TIMESTAMP,
+   open FLOAT,
+   high FLOAT,
+   low FLOAT,
+   trade FLOAT,
+   candle_acc_trade_price FLOAT,
+   candle_acc_trade_volume FLOAT
+);
+
+CREATE TABLE upbit_trade (
+   id SERIAL PRIMARY KEY,
+   timestamp TIMESTAMP,
+   trade_price FLOAT,
+   trade_volume FLOAT,
+   prev_closing_price FLOAT,
+   change_price FLOAT,
+   trade_time_utc VARCHAR(255)
+);
+
+CREATE TABLE upbit_ticker (
+   id SERIAL PRIMARY KEY,
+   timestamp TIMESTAMP,
+   trade_date VARCHAR(255),
+   trade_time VARCHAR(255),
+   opening_price INT,
+   high_price INT,
+   low_price INT,
+   trade_price INT,
+   prev_closing_price INT,
+   change VARCHAR(10),
+   change_price INT,
+   change_rate FLOAT,
+   signed_change_price INT,
+   signed_change_rate FLOAT,
+   trade_volume FLOAT,
+   acc_trade_price FLOAT,
+   acc_trade_volume FLOAT
+);
+		
+
+CREATE TABLE upbit_orderbook (
+   id SERIAL PRIMARY KEY,
+   timestamp TIMESTAMP,
+   total_ask_size FLOAT,
+   total_bid_size FLOAT,
+   max_ask_price FLOAT,
+   min_ask_price FLOAT,
+   min_bid_price FLOAT,
+   max_bid_price FLOAT,
+   median_ask_price FLOAT,
+   median_bid_price FLOAT
+);
+```
+
 ## 실행
 1. docker 컨테이너 실행
 
@@ -91,3 +153,13 @@ Raw 데이터와 분석된 결과를 Grafana를 통해 시각화하는 시스템
 1. kafka Topic, Data 확인 : http://localhost:9000
 2. Airflow DAG 확인 : http://localhost:8085
 3. Grafana 확인 : http://localhost:3000
+
+
+## 결과 이미지
+
+[Grafana Dashboard 1](images/grafana_result1.png)
+[Grafana Dashboard 2](images/grafana_result2.png)
+[Grafana Dashboard 3](images/grafana_result3.png)
+[Kafka Drop Dashboard 1](images/kafka_result1.png)
+[Kafka Drop Dashboard 2](images/kafka_result2.png)
+[Airflow Dashboard](images/airflow_result.png)
