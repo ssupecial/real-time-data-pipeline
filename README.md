@@ -160,8 +160,17 @@ CREATE TABLE upbit_orderbook (
 Grafana Dashboard 1
 <img src="https://github.com/user-attachments/assets/699e601b-4cf2-46c6-b6bd-ef9d6d0b42bb">
 
-[Grafana Dashboard 2](images/grafana_result2.png)
-[Grafana Dashboard 3](images/grafana_result3.png)
-[Kafka Drop Dashboard 1](images/kafka_result1.png)
-[Kafka Drop Dashboard 2](images/kafka_result2.png)
-[Airflow Dashboard](images/airflow_result.png)
+Grafana Dashboard 2
+<img src="https://github.com/user-attachments/assets/f840be12-7be1-4dab-9c34-001f159097df">
+
+Grafana Dashboard 3
+<img src="https://github.com/user-attachments/assets/a50036d4-57a2-45cc-9ad4-a491513419b6">
+
+Kafka Drop Dashboard 1
+<img src="https://github.com/user-attachments/assets/51509add-c17c-43e5-bf9c-3352fa7ff2ff">
+
+Kafka Drop Dashboard 2
+<img src="https://github.com/user-attachments/assets/a4e19065-53b0-42e7-811c-c9842690b88c">
+
+Airflow Dashboard
+<img src="https://github.com/user-attachments/assets/6920527d-3158-4759-a0a5-55ffd434fc4f">
